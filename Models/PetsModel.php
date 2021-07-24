@@ -222,4 +222,30 @@ class PetsModel extends Model
 
         return $this;
     }
+
+//     public function create()
+//     {
+//      $champs = [];
+//      $inter = [];
+//      $valeurs = [];
+ 
+//      //on boucle pour éclater le tableau
+//      foreach($this as $champ => $valeur){
+//          // INSERT INTO table WHERE (champX, champY, champZ) VALUES (?, ?, ?) 
+//          if($champ != null && $champ != 'db' && $champ != 'table'){
+//          $champs[] =  $champ ;
+//          $inter[] = "?";
+//          $valeurs[] = $valeur;
+//          }
+//      }
+ 
+ 
+//    // on transforme le tableau "champs" en une chaine de caracères
+//      $liste_champs = implode(', ', $champs);
+//      $liste_inter = implode(',', $inter);
+//       //  var_dump($liste_champs);
+//      //    on exécute la requete
+ 
+//      return $this->chercher('INSERT INTO '.$this->table.'( '. $liste_champs.') VALUES('.$liste_inter.')', $valeurs); 
+//     }
 }

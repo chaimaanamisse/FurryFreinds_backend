@@ -21,7 +21,7 @@
           <a class="nav-link " href="./main">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./reservations">Réserver</a>
+          <a class="nav-link" href="./annonces/ajouter">Publier une annonce</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0">

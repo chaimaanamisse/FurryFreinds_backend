@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paradise</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <!-- <link rel="stylesheet" href="../public/css/style.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
@@ -21,7 +21,7 @@
           <a class="nav-link " href="./main">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./reservations">Réserver</a>
+          <a class="nav-link" href="./annonces/ajouter">Publier une annonce</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
@@ -48,6 +48,17 @@
 
 
 <div class="theContainer">
+<div class="container">
+        <?php if(!empty($_SESSION['erreur'])): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); var_dump($fiche); ?>
+            </div>
+        <?php endif; ?>
+        <?php if(!empty($_SESSION['message'])): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $_SESSION['message']; unset($_SESSION['message']);  var_dump($fiche); ?>
+            </div>
+        <?php endif; ?>
      <?= $contenu ?>
 </div>
 

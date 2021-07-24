@@ -1,11 +1,11 @@
-html {
+/* html {
     scroll-behavior: smooth;
   }
   h2, h3, h4, .nav-item, #transition, footer {
     text-align: center;
   }
   /* ******************* HEADER **************** */
-  .collapse {
+  /* .collapse {
     margin-left: 4%;
   }
   .nav-item {
@@ -42,7 +42,7 @@ html {
   }
   .theContainer{
       width: 100%;
-  }
+  } */ 
   /* **************************** LEFT PART ************************
   #leftPart {
     background-color: #e5f0ed;

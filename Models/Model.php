@@ -71,7 +71,9 @@ class Model extends Db
      //  var_dump($liste_champs);
     //    on exécute la requete
 
-    return $this->chercher('INSERT INTO '.$this->table.'( '. $liste_champs.') VALUES('.$liste_inter.')', $valeurs); 
+     $this->chercher('INSERT INTO '.$this->table.'( '. $liste_champs.') VALUES('.$liste_inter.')', $valeurs); 
+     $this->db = Db::getInstance();
+     return $this->db->lastInsertId();
    }
 
 

@@ -12,7 +12,7 @@ class AnnoncesModel extends Model
 
     public function __construct()
     {
-        $this->table = 'annonces';
+        $this->table = 'annoces';
     }
 
     /**
@@ -119,4 +119,6 @@ class AnnoncesModel extends Model
 
         return $this;
     }
+
+    
 }

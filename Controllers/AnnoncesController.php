@@ -107,10 +107,10 @@ class AnnoncesController extends Controller
                 $description = strip_tags($_POST['description']);
 
                 // On instancie notre modèle
-                $fiche = new PetsModel;
+                $pet = new PetsModel;
 
                 // On hydrate
-                $fiche->setnom($nom)
+                $pet->setnom($nom)
                     ->setEspece($espece)
                     ->setRace($race)
                     ->setGenre($genre)
@@ -119,14 +119,38 @@ class AnnoncesController extends Controller
                     ->setDescription($description)
                     ->setImage($image)
                     ->setProprietaire_id($_SESSION['user']['id']);
+                    // print_r($pet);
 
                 // On enregistre
-                $fiche->create();
+                $id_fiche = $pet->create();
+                // print_r($fiche);
+
+
+                // On instancie notre modèle
+                $annonce = new AnnoncesModel;
+
+                 // On hydrate
+
+                 $annonce->setId_fiche($id_fiche)
+                        ->setActif(0)
+                        ->setIs_deleted(0);
+
+
+                  // On enregistre
+
+                $annonce->create();
+
+
+                // var_dump($fiche);
+                // print_r($fiche->id);
+                //$id_fiche = $fiche-> lastInsertId() ;
+
+                //$last_id = $conn->lastInsertId();
 
                 // On redirige
-                $_SESSION['message'] = "Votre annonce a été enregistrée avec succès";
-                header('Location: /projet_fil_rouge/public');
-                exit;
+                // $_SESSION['message'] = "Votre annonce a été enregistrée avec succès ";
+                // header('Location: /testpara/public');
+                // exit;
             }else{
                 // Le formulaire est incomplet
                 $_SESSION['erreur'] = !empty($_POST) ? "Le formulaire est incomplet" : '';
